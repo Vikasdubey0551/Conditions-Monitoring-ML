@@ -8,7 +8,7 @@ Ball bearings are a crucial component in any wind turbine. The condition of the 
 
 ![ball bearing](images/title1.png)
 
-Such a dent will cause distinct failure frequencies to appear as a function of the rotation speed of the shaft inside the ball bearing. The &quot;Ball Pass Frequency Outer&quot;(BPFO) is the frequencies which the balls passes over a single dent in the outer ring, this is typically specified as a multiple of rotation speed by the manufacturer.
+Such a dent will cause distinct failure frequencies to appear as a function of the rotation speed of the shaft inside the ball bearing. The **&quot;Ball Pass Frequency Outer&quot;**(BPFO) is the frequencies which the balls passes over a single dent in the outer ring, this is typically specified as a multiple of rotation speed by the manufacturer.
  Every time the ball passes over a dent, it will cause a spike in vibration captured by the data acquisition equipment. This will cause harmonics of the fault frequency(BPFO) to appear in the vibration data as seen in Figure 2. Sometimes these harmonics will also appear at much higher frequencies than seen here, such as and often the low harmonics are not observed.
 
 
@@ -35,22 +35,17 @@ In the Python file &quot;case\_western.py&quot; it is shown how to import two HD
 ![envelope signal](images/title3.png)
 
 
-I used the following machine Learning methods for this project : 
+I used the following unsupervised and supervised machine Learning methods for this project : 
 
-###  Unsupervised Machine learning
-
-####  Principal Components Analysis
-####  t-SNE
-####  Clustering (OPTICS)
-
-###  Supervised Machine learning
-
-####  Support Vector Machine (SVM) on Reduced Data
-####  XGBoost
-####  Recurrents neural networks
+*  Principal Components Analysis
+*  t-SNE
+*  Clustering (OPTICS)
+*  Support Vector Machine (SVM) + Dimensionality Reduction
+*  XGBoost + FFT 
+*  Recurrents neural networks
 
 
-Careful data preprocessing and dimensionality reduction leads to a perfect score of `100%``accuracy,f1-macro,precision and recall with all the methods above. Methods perform reasonably well on the raw data as well with the accuracy of `96.4%` after the K-fold cross validation. 
+Careful data preprocessing and dimensionality reduction leads to a perfect score of `100%` accuracy,f1-macro,precision and recall with all the methods above. Methods perform reasonably well on the raw data as well with the accuracy of `96.4%` after the K-fold cross validation. 
 
 ![clustering](images/title4.png)
 
@@ -62,8 +57,9 @@ There is a clear class imbalance in the data. Faulty data is 4 times lower than 
 
 ![confusion matrix](images/title6.png)
 
-**Perfect score in the confusion matrix and both classes are predicted perfectly after dimensionality reduction  and Machine Learning (top).**
-**Not so perfect score in the confusion matrix and faulty class has been as predicted as baseline in 2,2 occasions in both test and validation data respectively after Machine Learning on Raw data. (bottom)**
+* **Perfect score in the confusion matrix and both classes are predicted perfectly after dimensionality reduction  and Machine Learning (top).**
+
+* **Not so perfect score in the confusion matrix and faulty class has been as predicted as baseline in 2,2 occasions in both test and validation data respectively after Machine Learning on Raw data. (bottom)**
 
 
 
